@@ -69,10 +69,34 @@ module MakerBlog
   end
 end
 
+client = MakerBlog::Client.new
+#creates a new client in the MakerBlog
+
+Puts "Welcome to the MakerSquare Blog. What would you like to: CREATE, LIST, EDIT, or DELETE"
+user_input = gets.chomp
+
+if user_input == 'CREATE'
+	puts "Enter your name:"
+		name = gets.chomp
+	puts "What would you like to title this entry?"
+		title = gets.chomp
+	puts "Enter the content for this entry"
+		content = gets.chomp
+	client.client.create_post(name, title, content)
+
+elsif user_input == 'LIST'
+
+elsif user_input == 'EDIT'
+
+elsif user_input == 'DELETE'
+	
+else
+	"I'm sorry, that is not a valid choice. Please enter CREATE, LIST, EDIT, or DELETE"
+end
  client = MakerBlog::Client.new
  # client.list_posts
  # client.show_posts(481)
  # client.create_posts("Hello", "World", "Se dig snart")
 
  # client.edit_post(25, {:name => "Snake Plissssken", :content => "Escape from LA"})
- client.delete_post(529)
+ # client.delete_post(529)
